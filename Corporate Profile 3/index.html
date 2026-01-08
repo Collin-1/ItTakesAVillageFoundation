@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>It Takes a Village Foundation | Home</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      :root {
+        --brand-primary: #1b365d;
+        --brand-primary-rgb: 27, 54, 93;
+        --brand-secondary: #5d7b9d;
+        --nav-h: 0px;
+        --section-bg: #f7f9fb;
+        --card-shadow: 0 2px 16px 0 rgba(27, 54, 93, 0.06);
+      }
+
+      body {
+        font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Arial,
+          sans-serif;
+      }
+
+      .bg-brand-primary {
+        background-color: var(--brand-primary) !important;
+      }
+      .text-brand-primary {
+        color: var(--brand-primary) !important;
+      }
+      .bg-brand-secondary {
+        background-color: var(--brand-secondary) !important;
+      }
+
+      .section-bg {
+        background: var(--section-bg);
+        border-radius: 1.5rem;
+        box-shadow: 0 2px 24px 0 rgba(27, 54, 93, 0.04);
+        padding: 2.5rem 1.5rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .card {
+        box-shadow: var(--card-shadow);
+        border: none;
+        border-radius: 1rem;
+      }
+
+      .value-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 1rem;
+        display: block;
+      }
+
+      .btn-brand-primary {
+        background-color: var(--brand-primary) !important;
+        border-color: var(--brand-primary) !important;
+        color: #fff !important;
+      }
+
+      .btn-brand-primary:hover,
+      .btn-brand-primary:focus {
+        filter: brightness(0.95);
+      }
+
+      .hero {
+        color: #fff;
+      }
+
+      .hero a {
+        text-decoration: none;
+      }
+
+      .hero-banner {
+        position: relative;
+        display: grid;
+        color: #fff;
+        height: 100vh;
+        height: 100dvh;
+      }
+
+      .hero-banner-img {
+        grid-area: 1 / 1;
+        width: 100%;
+        height: 100%;
+        height: calc(100vh - var(--nav-h));
+        height: calc(100dvh - var(--nav-h));
+        object-position: 50% 100%;
+      }
+
+      .hero-banner-content {
+        grid-area: 1 / 1;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .hero-banner-content h1,
+      .hero-banner-content p {
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+      }
+
+      .hero-banner-content > .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-banner-content > .container {
+        padding-top: clamp(1rem, 4vh, 2.5rem) !important;
+        padding-bottom: 1rem !important;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg bg-brand-primary navbar-dark sticky-top"
+    >
+      <div class="container">
+        <a
+          class="navbar-brand fw-semibold d-flex align-items-center"
+          href="index.html"
+        >
+          <img
+            src="logo.png"
+            alt="It Takes a Village Foundation logo"
+            width="40"
+            height="40"
+            class="d-inline-block align-text-top me-2"
+          />
+          <span>It Takes a Village Foundation</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="programs.html">Programs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="impact.html">About &amp; Involvement</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero hero-banner">
+      <img class="hero-banner-img" src="home-hero.png" alt="" />
+      <div class="hero-banner-content">
+        <div class="container">
+          <h1 class="display-5 fw-bold">
+            Unlocking Potential Through Education and Sports
+          </h1>
+          <p class="col-lg-8 fs-5 mb-4">
+            We empower young people through access to quality learning and
+            strong community programs.
+          </p>
+          <a
+            class="btn btn-lg btn-brand-primary"
+            href="impact.html#get-involved"
+            >Get Involved</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="py-5">
+      <section class="container section-bg mb-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-6">
+            <!-- AI prompt: African children learning together in a bright classroom, joyful, modern, community, education, realistic, high quality -->
+            <img
+              src="placeholder-mission.jpg"
+              alt="Children learning in classroom"
+              class="img-fluid rounded mb-3 shadow-sm"
+              style="min-height: 180px; object-fit: cover"
+            />
+            <h2 class="h3 text-brand-primary">Mission</h2>
+            <p class="mb-0">
+              To inspire and equip young minds with the skills, knowledge, and
+              confidence they need to become leaders and innovators in their
+              communities.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <!-- AI prompt: Diverse group of young people playing sports and studying, outdoor, hopeful, inclusive, South Africa, vibrant, realistic -->
+            <img
+              src="placeholder-vision.jpg"
+              alt="Diverse youth playing sports and studying"
+              class="img-fluid rounded mb-3 shadow-sm"
+              style="min-height: 180px; object-fit: cover"
+            />
+            <h2 class="h3 text-brand-primary">Vision</h2>
+            <p class="mb-0">
+              To create a community where every young person, regardless of
+              their background, has the opportunity to realize their full
+              potential through access to quality education and sports programs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="container section-bg">
+        <div
+          class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3"
+        >
+          <h2 class="h3 text-brand-primary mb-0">Core Values</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-4">
+            <div class="card h-100 text-center p-3">
+              <!-- AI prompt: Raised fist, empowerment, youth, flat icon, blue accent -->
+              <img
+                src="placeholder-empowerment.png"
+                alt="Empowerment icon"
+                class="value-icon mx-auto"
+              />
+              <div class="card-body">
+                <h3 class="h5 card-title text-brand-primary">Empowerment</h3>
+                <p class="card-text mb-0">
+                  Building confidence, capability, and independence in every
+                  learner.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <div class="card h-100 text-center p-3">
+              <!-- AI prompt: Lightbulb with gears, innovation, technology, flat icon, blue accent -->
+              <img
+                src="placeholder-innovation.png"
+                alt="Innovation icon"
+                class="value-icon mx-auto"
+              />
+              <div class="card-body">
+                <h3 class="h5 card-title text-brand-primary">Innovation</h3>
+                <p class="card-text mb-0">
+                  Encouraging curiosity and creative thinking through technology
+                  and sport.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <div class="card h-100 text-center p-3">
+              <!-- AI prompt: Handshake, trust, integrity, flat icon, blue accent -->
+              <img
+                src="placeholder-integrity.png"
+                alt="Integrity icon"
+                class="value-icon mx-auto"
+              />
+              <div class="card-body">
+                <h3 class="h5 card-title text-brand-primary">Integrity</h3>
+                <p class="card-text mb-0">
+                  Doing the right thing with honesty, transparency, and respect.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <div class="card h-100 text-center p-3">
+              <!-- AI prompt: Circle of diverse hands, inclusivity, flat icon, blue accent -->
+              <img
+                src="placeholder-inclusivity.png"
+                alt="Inclusivity icon"
+                class="value-icon mx-auto"
+              />
+              <div class="card-body">
+                <h3 class="h5 card-title text-brand-primary">Inclusivity</h3>
+                <p class="card-text mb-0">
+                  Creating welcoming programs for all young people, regardless
+                  of background.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <div class="card h-100 text-center p-3">
+              <!-- AI prompt: Gold trophy, excellence, achievement, flat icon, blue accent -->
+              <img
+                src="placeholder-excellence.png"
+                alt="Excellence icon"
+                class="value-icon mx-auto"
+              />
+              <div class="card-body">
+                <h3 class="h5 card-title text-brand-primary">Excellence</h3>
+                <p class="card-text mb-0">
+                  Striving for high-quality delivery and meaningful outcomes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-brand-primary text-white py-4">
+      <div class="container">
+        <div class="row g-3">
+          <div class="col-lg-6">
+            <div class="fw-semibold">
+              It Takes a Village Foundation (NPO 294-842) | Reg No:
+              2022/021905/08
+            </div>
+            <div>Established 2019 | Tembisa</div>
+          </div>
+          <div class="col-lg-6 text-lg-end">
+            <div>cobotskidsclubsa@gmail.com | +27 73 741 2268</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      (function () {
+        function setNavHeight() {
+          var nav = document.querySelector(".navbar");
+          if (!nav) return;
+          document.documentElement.style.setProperty(
+            "--nav-h",
+            nav.offsetHeight + "px"
+          );
+        }
+
+        window.addEventListener("load", setNavHeight);
+        window.addEventListener("resize", setNavHeight);
+        setNavHeight();
+      })();
+    </script>
+  </body>
+</html>
