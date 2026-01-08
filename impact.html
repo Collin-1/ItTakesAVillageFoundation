@@ -24,12 +24,18 @@
         --brand-primary: #1b365d;
         --brand-primary-rgb: 27, 54, 93;
         --brand-secondary: #5d7b9d;
+        --brand-accent: #ff6b35;
         --nav-h: 0px;
+        --section-bg: #ffffff;
+        --card-shadow: 0 4px 20px 0 rgba(27, 54, 93, 0.08);
+        --card-hover-shadow: 0 8px 30px 0 rgba(27, 54, 93, 0.15);
       }
 
       body {
         font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Arial,
           sans-serif;
+        background-color: #f8f9fa;
+        line-height: 1.7;
       }
 
       .bg-brand-primary {
@@ -42,15 +48,33 @@
         background-color: var(--brand-secondary) !important;
       }
 
+      .card {
+        box-shadow: var(--card-shadow);
+        border: none;
+        border-radius: 1rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--card-hover-shadow);
+      }
+
       .btn-brand-primary {
         background-color: var(--brand-primary) !important;
         border-color: var(--brand-primary) !important;
         color: #fff !important;
+        padding: 0.75rem 2rem;
+        font-weight: 500;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease;
       }
 
       .btn-brand-primary:hover,
       .btn-brand-primary:focus {
-        filter: brightness(0.95);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(27, 54, 93, 0.3);
       }
 
       .hero-banner {
@@ -67,13 +91,15 @@
         height: 100%;
         height: calc(100vh - var(--nav-h));
         height: calc(100dvh - var(--nav-h));
-        object-position: 50% 100%;
+        object-fit: cover;
+        object-position: 50% 40%;
+        filter: brightness(0.65);
       }
 
       .hero-banner-content {
         grid-area: 1 / 1;
         display: flex;
-        align-items: flex-start;
+        align-items: center;
       }
 
       .hero-banner-content h1,
@@ -83,12 +109,150 @@
 
       .hero-banner-content > .container {
         position: relative;
-        z-index: 1;
+        z-index: 2;
       }
 
       .hero-banner-content > .container {
         padding-top: clamp(1rem, 4vh, 2.5rem) !important;
         padding-bottom: 1rem !important;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2.5rem;
+      }
+
+      .impact-img {
+        width: 100%;
+        max-width: 500px;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 0.75rem;
+      }
+
+      .impact-stats {
+        background: var(--section-bg);
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: var(--card-shadow);
+      }
+
+      .impact-stats li {
+        padding: 0.5rem 0;
+        font-size: 1.1rem;
+      }
+
+      .stats-badge {
+        display: inline-block;
+        background: linear-gradient(
+          135deg,
+          var(--brand-primary),
+          var(--brand-secondary)
+        );
+        color: white;
+        padding: 0.5rem 1.25rem;
+        border-radius: 2rem;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-right: 0.75rem;
+        margin-bottom: 0.75rem;
+        box-shadow: 0 4px 12px rgba(27, 54, 93, 0.2);
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--brand-primary);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-item {
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        background: white;
+        box-shadow: var(--card-shadow);
+        transition: all 0.3s ease;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      .stat-item:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--card-hover-shadow);
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-on-scroll {
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      footer {
+        background: linear-gradient(
+          135deg,
+          var(--brand-primary) 0%,
+          #0f2445 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--brand-secondary),
+          var(--brand-accent),
+          var(--brand-secondary)
+        );
+      }
+
+      .footer-link {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: white;
+      }
+
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--brand-primary);
+        border-radius: 6px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--brand-secondary);
+      }
+
+      .involvement-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
       }
     </style>
   </head>
@@ -108,7 +272,12 @@
             height="40"
             class="d-inline-block align-text-top me-2"
           />
-          <span>It Takes a Village Foundation</span>
+          <span>
+            <div style="line-height: 1.2">
+              <div style="font-size: 0.9em">It Takes a</div>
+              <div>Village Foundation</div>
+            </div>
+          </span>
         </a>
         <button
           class="navbar-toggler"
@@ -131,7 +300,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="impact.html"
-                >About &amp; Involvement</a
+                >Our Impact</a
               >
             </li>
           </ul>
@@ -143,10 +312,12 @@
       <img class="hero-banner-img" src="our-impact.png" alt="" />
       <div class="hero-banner-content">
         <div class="container">
-          <h1 class="display-6 fw-bold mb-2">Impact &amp; Get Involved</h1>
-          <p class="mb-0">
-            Learn about the difference we're making &mdash; and how you can help
-            grow it.
+          <h1 class="display-6 fw-bold mb-2 animate-on-scroll">
+            Impact &amp; Get Involved
+          </h1>
+          <p class="mb-0 animate-on-scroll">
+            Creating real change in our communities. Learn about the difference
+            we're making &mdash; and how you can help grow it.
           </p>
         </div>
       </div>
@@ -154,41 +325,72 @@
 
     <main class="py-5">
       <section class="container mb-5">
-        <h2 class="h3 text-brand-primary">Our Impact</h2>
-        <ul class="mb-3">
-          <li>Over 500 youth reached in 3 years</li>
-          <li>100% of participants report increased confidence</li>
-          <li>Dozens of students now pursuing STEM careers</li>
-          <li>Expanded to 3 communities in Gauteng</li>
-        </ul>
-        <p>
-          We measure our success by the lives we change and the communities we
-          uplift. Every number represents a story of growth, hope, and
-          opportunity.
-        </p>
-        <div class="col-md-5">
-          <img
-            src="children-building-robots-2.png"
-            alt="Group of children and mentors celebrating"
-            class="img-fluid rounded shadow-sm"
-            style="min-height: 180px; object-fit: cover"
-          />
+        <h2 class="section-title text-brand-primary text-center">Our Impact</h2>
+        <div class="row g-4 mb-4">
+          <div class="col-md-3 col-sm-6">
+            <div class="stat-item">
+              <div class="stat-number">500+</div>
+              <div class="text-muted">Youth Reached</div>
+              <div class="small mt-2">🎯 in 3 years</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="stat-item">
+              <div class="stat-number">100%</div>
+              <div class="text-muted">Confidence Boost</div>
+              <div class="small mt-2">💪 reported by participants</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="stat-item">
+              <div class="stat-number">Dozens</div>
+              <div class="text-muted">STEM Careers</div>
+              <div class="small mt-2">🎓 students pursuing</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="stat-item">
+              <div class="stat-number">3</div>
+              <div class="text-muted">Communities</div>
+              <div class="small mt-2">🏛️ expanded in Gauteng</div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <div class="impact-stats">
+              <p class="lead mb-0">
+                We measure our success by the lives we change and the
+                communities we uplift. Every number represents a story of
+                growth, hope, and opportunity. Together, we're building a
+                brighter future for our youth.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6 text-center">
+            <img
+              src="children-building-robots-2.png"
+              alt="Group of children and mentors celebrating"
+              class="impact-img shadow"
+            />
+          </div>
         </div>
       </section>
 
-      <section class="container" id="get-involved">
-        <div
-          class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3"
-        >
-          <h2 class="h3 text-brand-primary mb-0">Get Involved</h2>
-        </div>
+      <section class="container mb-5" id="get-involved">
+        <h2 class="section-title text-brand-primary text-center">
+          Get Involved
+        </h2>
 
-        <div class="row g-4">
+        <div class="row g-4 justify-content-center">
           <div class="col-md-4">
             <div class="card h-100">
-              <div class="card-body">
-                <h3 class="h5 card-title text-brand-primary">Volunteer</h3>
-                <p class="card-text mb-3">
+              <div class="card-body text-center p-4">
+                <div class="involvement-icon">🤝</div>
+                <h3 class="h5 card-title text-brand-primary fw-bold mb-3">
+                  Volunteer
+                </h3>
+                <p class="card-text mb-4">
                   Join us as a mentor, coach, or program facilitator.
                 </p>
                 <a
@@ -201,9 +403,12 @@
           </div>
           <div class="col-md-4">
             <div class="card h-100">
-              <div class="card-body">
-                <h3 class="h5 card-title text-brand-primary">Donate</h3>
-                <p class="card-text mb-3">
+              <div class="card-body text-center p-4">
+                <div class="involvement-icon">💝</div>
+                <h3 class="h5 card-title text-brand-primary fw-bold mb-3">
+                  Donate
+                </h3>
+                <p class="card-text mb-4">
                   Support our programs through financial contributions.
                 </p>
                 <a
@@ -216,9 +421,12 @@
           </div>
           <div class="col-md-4">
             <div class="card h-100">
-              <div class="card-body">
-                <h3 class="h5 card-title text-brand-primary">Partner</h3>
-                <p class="card-text mb-3">
+              <div class="card-body text-center p-4">
+                <div class="involvement-icon">🌐</div>
+                <h3 class="h5 card-title text-brand-primary fw-bold mb-3">
+                  Partner
+                </h3>
+                <p class="card-text mb-4">
                   Collaborate with us to expand our reach.
                 </p>
                 <a
@@ -233,19 +441,50 @@
       </section>
     </main>
 
-    <footer class="bg-brand-primary text-white py-4">
+    <footer class="text-white py-5">
       <div class="container">
-        <div class="row g-3">
-          <div class="col-lg-6">
-            <div class="fw-semibold">
-              It Takes a Village Foundation (NPO 294-842) | Reg No:
-              2022/021905/08
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <h5 class="fw-bold mb-3">It Takes a Village Foundation</h5>
+            <p class="mb-2">
+              Empowering youth through education and sports since 2019.
+            </p>
+            <p class="small mb-0 opacity-75">
+              NPO 294-842 | Reg No: 2022/021905/08<br />
+              Tembisa, Gauteng
+            </p>
+          </div>
+          <div class="col-lg-4">
+            <h6 class="fw-bold mb-3">Quick Links</h6>
+            <div class="d-flex flex-column gap-2">
+              <a href="index.html" class="footer-link">Home</a>
+              <a href="programs.html" class="footer-link">Programs</a>
+              <a href="impact.html" class="footer-link">About & Involvement</a>
+              <a href="impact.html#get-involved" class="footer-link"
+                >Get Involved</a
+              >
             </div>
-            <div>Established 2019 | Tembisa</div>
           </div>
-          <div class="col-lg-6 text-lg-end">
-            <div>cobotskidsclubsa@gmail.com | +27 73 741 2268</div>
+          <div class="col-lg-4">
+            <h6 class="fw-bold mb-3">Contact Us</h6>
+            <p class="mb-2">
+              <strong>Email:</strong><br />
+              <a href="mailto:cobotskidsclubsa@gmail.com" class="footer-link"
+                >cobotskidsclubsa@gmail.com</a
+              >
+            </p>
+            <p class="mb-0">
+              <strong>Phone:</strong><br />
+              <a href="tel:+27737412268" class="footer-link">+27 73 741 2268</a>
+            </p>
           </div>
+        </div>
+        <hr class="my-4 opacity-25" />
+        <div class="text-center small opacity-75">
+          <p class="mb-0">
+            © 2026 It Takes a Village Foundation. Making a difference, one child
+            at a time. ❤️
+          </p>
         </div>
       </div>
     </footer>

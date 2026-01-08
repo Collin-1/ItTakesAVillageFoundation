@@ -24,28 +24,39 @@
         --brand-primary: #1b365d;
         --brand-primary-rgb: 27, 54, 93;
         --brand-secondary: #5d7b9d;
+        --brand-accent: #ff6b35;
         --nav-h: 0px;
-        --section-bg: #f7f9fb;
-        --card-shadow: 0 2px 16px 0 rgba(27, 54, 93, 0.06);
+        --section-bg: #ffffff;
+        --card-shadow: 0 4px 20px 0 rgba(27, 54, 93, 0.08);
+        --card-hover-shadow: 0 8px 30px 0 rgba(27, 54, 93, 0.15);
       }
 
       body {
         font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Arial,
           sans-serif;
+        background-color: #f8f9fa;
+        line-height: 1.7;
       }
 
       .section-bg {
         background: var(--section-bg);
         border-radius: 1.5rem;
-        box-shadow: 0 2px 24px 0 rgba(27, 54, 93, 0.04);
-        padding: 2.5rem 1.5rem;
-        margin-bottom: 2.5rem;
+        box-shadow: var(--card-shadow);
+        padding: 3.5rem 2.5rem;
+        margin-bottom: 3rem;
       }
 
       .card {
         box-shadow: var(--card-shadow);
         border: none;
         border-radius: 1rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--card-hover-shadow);
       }
 
       .bg-brand-primary {
@@ -62,11 +73,23 @@
         background-color: var(--brand-primary) !important;
         border-color: var(--brand-primary) !important;
         color: #fff !important;
+        padding: 0.75rem 2rem;
+        font-weight: 500;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease;
       }
 
       .btn-brand-primary:hover,
       .btn-brand-primary:focus {
-        filter: brightness(0.95);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(27, 54, 93, 0.3);
+      }
+
+      .program-img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        border-radius: 0.75rem;
       }
 
       .hero-banner {
@@ -84,13 +107,14 @@
         height: calc(100vh - var(--nav-h));
         height: calc(100dvh - var(--nav-h));
         object-fit: cover;
-        object-position: 50% 100%;
+        object-position: 50% 40%;
+        filter: brightness(0.65);
       }
 
       .hero-banner-content {
         grid-area: 1 / 1;
         display: flex;
-        align-items: flex-start;
+        align-items: center;
       }
 
       .hero-banner-content h1,
@@ -100,12 +124,138 @@
 
       .hero-banner-content > .container {
         position: relative;
-        z-index: 1;
+        z-index: 2;
       }
 
       .hero-banner-content > .container {
         padding-top: clamp(1rem, 4vh, 2.5rem) !important;
         padding-bottom: 1rem !important;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2.5rem;
+      }
+
+      .list-group-item {
+        border-left: none;
+        border-right: none;
+        padding: 0.75rem 0;
+      }
+
+      .list-group-item:first-child {
+        border-top: none;
+      }
+
+      .stats-badge {
+        display: inline-block;
+        background: linear-gradient(
+          135deg,
+          var(--brand-primary),
+          var(--brand-secondary)
+        );
+        color: white;
+        padding: 0.5rem 1.25rem;
+        border-radius: 2rem;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-right: 0.75rem;
+        margin-bottom: 0.75rem;
+        box-shadow: 0 4px 12px rgba(27, 54, 93, 0.2);
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-on-scroll {
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      footer {
+        background: linear-gradient(
+          135deg,
+          var(--brand-primary) 0%,
+          #0f2445 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--brand-secondary),
+          var(--brand-accent),
+          var(--brand-secondary)
+        );
+      }
+
+      .footer-link {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-link:hover {
+        color: white;
+      }
+
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--brand-primary);
+        border-radius: 6px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--brand-secondary);
+      }
+
+      .program-card {
+        background: white;
+        border-radius: 1rem;
+        padding: 2rem;
+        height: 100%;
+        box-shadow: var(--card-shadow);
+        transition: all 0.3s ease;
+      }
+
+      .program-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--card-hover-shadow);
+      }
+
+      .list-group-item {
+        background: transparent;
+        font-size: 1rem;
+      }
+
+      .list-group-item::before {
+        content: "✓";
+        color: var(--brand-primary);
+        font-weight: bold;
+        margin-right: 0.5rem;
       }
     </style>
   </head>
@@ -125,7 +275,12 @@
             height="40"
             class="d-inline-block align-text-top me-2"
           />
-          <span>It Takes a Village Foundation</span>
+          <span>
+            <div style="line-height: 1.2">
+              <div style="font-size: 0.9em">It Takes a</div>
+              <div>Village Foundation</div>
+            </div>
+          </span>
         </a>
         <button
           class="navbar-toggler"
@@ -152,7 +307,7 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="impact.html">Impact</a>
+              <a class="nav-link" href="impact.html">Our Impact</a>
             </li>
           </ul>
         </div>
@@ -167,74 +322,117 @@
       />
       <div class="hero-banner-content">
         <div class="container py-4 py-md-5">
-          <h1 class="display-4 fw-bold mb-3">Our Programs</h1>
-          <p class="fs-5 mb-0">
-            Empowering youth through technology and sports
+          <h1 class="display-4 fw-bold mb-3 animate-on-scroll">Our Programs</h1>
+          <p class="fs-5 mb-0 animate-on-scroll">
+            Transforming lives through learning. Empowering youth through
+            technology and sports.
           </p>
         </div>
       </div>
     </div>
 
     <main class="py-5">
-      <section class="container section-bg mb-5">
-        <div class="row g-4 align-items-center">
+      <section class="container mb-5">
+        <h2 class="section-title text-brand-primary text-center">
+          Empowering Programs
+        </h2>
+        <div class="row g-5 align-items-stretch">
           <div class="col-md-6">
-            <img
-              src="children-building-robots.png"
-              alt="Children coding and building robots"
-              class="img-fluid rounded mb-3 shadow-sm"
-              style="min-height: 180px; object-fit: cover"
-            />
-            <h2 class="h3 text-brand-primary">Coding & Robotics</h2>
-            <ul class="list-group list-group-flush mb-3">
-              <li class="list-group-item">Hands-on coding workshops</li>
-              <li class="list-group-item">Robotics competitions</li>
-              <li class="list-group-item">
-                Mentorship from industry professionals
-              </li>
-              <li class="list-group-item">Access to laptops and kits</li>
-            </ul>
-            <p>
-              Our Coding & Robotics program empowers youth with digital skills
-              for the future, fostering creativity and problem-solving.
-            </p>
+            <div class="program-card">
+              <img
+                src="children-building-robots.png"
+                alt="Children coding and building robots"
+                class="program-img shadow-sm mb-4"
+              />
+              <h3 class="h4 text-brand-primary fw-bold mb-3">
+                🤖 Coding & Robotics
+              </h3>
+              <ul class="list-group list-group-flush mb-4">
+                <li class="list-group-item">Hands-on coding workshops</li>
+                <li class="list-group-item">Robotics competitions</li>
+                <li class="list-group-item">
+                  Mentorship from industry professionals
+                </li>
+                <li class="list-group-item">Access to laptops and kits</li>
+              </ul>
+              <p class="mb-0">
+                Our Coding & Robotics program empowers youth with digital skills
+                for the future, fostering creativity and problem-solving.
+              </p>
+            </div>
           </div>
           <div class="col-md-6">
-            <img
-              src="girls-playing-netball.png"
-              alt="Youth playing soccer and netball"
-              class="img-fluid rounded mb-3 shadow-sm"
-              style="min-height: 180px; object-fit: cover"
-            />
-            <h2 class="h3 text-brand-primary">Sports Development</h2>
-            <ul class="list-group list-group-flush mb-3">
-              <li class="list-group-item">Soccer and netball leagues</li>
-              <li class="list-group-item">Teamwork and leadership training</li>
-              <li class="list-group-item">Health and wellness workshops</li>
-              <li class="list-group-item">Community tournaments</li>
-            </ul>
-            <p>
-              Our Sports Development program builds confidence, teamwork, and
-              healthy habits through structured sports activities.
-            </p>
+            <div class="program-card">
+              <img
+                src="girls-playing-netball.png"
+                alt="Youth playing soccer and netball"
+                class="program-img shadow-sm mb-4"
+              />
+              <h3 class="h4 text-brand-primary fw-bold mb-3">
+                ⚽ Sports Development
+              </h3>
+              <ul class="list-group list-group-flush mb-4">
+                <li class="list-group-item">Soccer and netball leagues</li>
+                <li class="list-group-item">
+                  Teamwork and leadership training
+                </li>
+                <li class="list-group-item">Health and wellness workshops</li>
+                <li class="list-group-item">Community tournaments</li>
+              </ul>
+              <p class="mb-0">
+                Our Sports Development program builds confidence, teamwork, and
+                healthy habits through structured sports activities.
+              </p>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="bg-brand-primary text-white py-4">
+    <footer class="text-white py-5">
       <div class="container">
-        <div class="row g-3">
-          <div class="col-lg-6">
-            <div class="fw-semibold">
-              It Takes a Village Foundation (NPO 294-842) | Reg No:
-              2022/021905/08
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <h5 class="fw-bold mb-3">It Takes a Village Foundation</h5>
+            <p class="mb-2">
+              Empowering youth through education and sports since 2019.
+            </p>
+            <p class="small mb-0 opacity-75">
+              NPO 294-842 | Reg No: 2022/021905/08<br />
+              Tembisa, Gauteng
+            </p>
+          </div>
+          <div class="col-lg-4">
+            <h6 class="fw-bold mb-3">Quick Links</h6>
+            <div class="d-flex flex-column gap-2">
+              <a href="index.html" class="footer-link">Home</a>
+              <a href="programs.html" class="footer-link">Programs</a>
+              <a href="impact.html" class="footer-link">About & Involvement</a>
+              <a href="impact.html#get-involved" class="footer-link"
+                >Get Involved</a
+              >
             </div>
-            <div>Established 2019 | Tembisa</div>
           </div>
-          <div class="col-lg-6 text-lg-end">
-            <div>cobotskidsclubsa@gmail.com | +27 73 741 2268</div>
+          <div class="col-lg-4">
+            <h6 class="fw-bold mb-3">Contact Us</h6>
+            <p class="mb-2">
+              <strong>Email:</strong><br />
+              <a href="mailto:cobotskidsclubsa@gmail.com" class="footer-link"
+                >cobotskidsclubsa@gmail.com</a
+              >
+            </p>
+            <p class="mb-0">
+              <strong>Phone:</strong><br />
+              <a href="tel:+27737412268" class="footer-link">+27 73 741 2268</a>
+            </p>
           </div>
+        </div>
+        <hr class="my-4 opacity-25" />
+        <div class="text-center small opacity-75">
+          <p class="mb-0">
+            © 2026 It Takes a Village Foundation. Making a difference, one child
+            at a time. ❤️
+          </p>
         </div>
       </div>
     </footer>
