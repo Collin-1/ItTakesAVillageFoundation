@@ -36,6 +36,29 @@
           sans-serif;
         background-color: #f8f9fa;
         line-height: 1.7;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: "⚙";
+        position: fixed;
+        top: 20%;
+        right: 8%;
+        font-size: 140px;
+        opacity: 0.06;
+        z-index: 0;
+        transform: rotate(20deg);
+      }
+
+      body::after {
+        content: "🎯";
+        position: fixed;
+        bottom: 15%;
+        left: 5%;
+        font-size: 160px;
+        opacity: 0.06;
+        z-index: 0;
       }
 
       .bg-brand-primary {
@@ -254,6 +277,71 @@
         font-size: 3rem;
         margin-bottom: 1rem;
       }
+
+      main {
+        position: relative;
+        z-index: 1;
+      }
+
+      main::before {
+        content: "⚙ 🎯 📊 ⚙ 💪 🏆 ⚙ 📈 ⚙ 🎯 📊 ⚙ 💪 🏆 ⚙ 📈 ⚙ 🎯 📊 ⚙ 💪 🏆 ⚙ 📈 ⚙ 🎯 📊 ⚙ 💪 🏆 ⚙ 📈 ⚙ 🎯 📊 ⚙ 💪 🏆 ⚙ 📈 ⚙";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 68px;
+        opacity: 0.05;
+        z-index: 0;
+        word-spacing: 95px;
+        line-height: 2.9;
+        overflow: hidden;
+        pointer-events: none;
+        transform: rotate(-3deg);
+      }
+
+      .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      nav::after {
+        content: "⚙";
+        position: fixed;
+        top: 12%;
+        left: 8%;
+        font-size: 100px;
+        opacity: 0.06;
+        z-index: 0;
+        transform: rotate(-40deg);
+      }
+
+      .stat-item::before {
+        content: "⚙";
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 35px;
+        opacity: 0.08;
+        transform: rotate(15deg);
+        pointer-events: none;
+      }
+
+      .stat-item {
+        position: relative;
+      }
+
+      footer::after {
+        content: "⚙ 🔧 ⚙";
+        position: absolute;
+        bottom: 20%;
+        right: 8%;
+        font-size: 75px;
+        opacity: 0.08;
+        z-index: 0;
+        word-spacing: 25px;
+        transform: rotate(10deg);
+      }
     </style>
   </head>
   <body>
@@ -331,28 +419,28 @@
             <div class="stat-item">
               <div class="stat-number">500+</div>
               <div class="text-muted">Youth Reached</div>
-              <div class="small mt-2">🎯 in 3 years</div>
+              <div class="small mt-2">in 3 years</div>
             </div>
           </div>
           <div class="col-md-3 col-sm-6">
             <div class="stat-item">
               <div class="stat-number">100%</div>
               <div class="text-muted">Confidence Boost</div>
-              <div class="small mt-2">💪 reported by participants</div>
+              <div class="small mt-2">reported by participants</div>
             </div>
           </div>
           <div class="col-md-3 col-sm-6">
             <div class="stat-item">
               <div class="stat-number">Dozens</div>
               <div class="text-muted">STEM Careers</div>
-              <div class="small mt-2">🎓 students pursuing</div>
+              <div class="small mt-2">students pursuing</div>
             </div>
           </div>
           <div class="col-md-3 col-sm-6">
             <div class="stat-item">
               <div class="stat-number">3</div>
               <div class="text-muted">Communities</div>
-              <div class="small mt-2">🏛️ expanded in Gauteng</div>
+              <div class="small mt-2">expanded in Gauteng</div>
             </div>
           </div>
         </div>
@@ -483,7 +571,7 @@
         <div class="text-center small opacity-75">
           <p class="mb-0">
             © 2026 It Takes a Village Foundation. Making a difference, one child
-            at a time. ❤️
+            at a time.
           </p>
         </div>
       </div>

@@ -36,6 +36,30 @@
           sans-serif;
         background-color: #f8f9fa;
         line-height: 1.7;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: "⚙";
+        position: fixed;
+        top: 15%;
+        right: 5%;
+        font-size: 150px;
+        opacity: 0.06;
+        z-index: 0;
+        transform: rotate(15deg);
+      }
+
+      body::after {
+        content: "⚙";
+        position: fixed;
+        bottom: 10%;
+        left: 3%;
+        font-size: 200px;
+        opacity: 0.06;
+        z-index: 0;
+        transform: rotate(-25deg);
       }
 
       .bg-brand-primary {
@@ -270,6 +294,75 @@
         transform: translateY(-5px);
         box-shadow: var(--card-hover-shadow);
       }
+
+      .section-bg::before {
+        content: "⚙ 🔧 💡 📚 🎯 ⚙ 🤖 ⚙";
+        position: absolute;
+        top: -50px;
+        left: -50px;
+        right: -50px;
+        bottom: -50px;
+        font-size: 60px;
+        opacity: 0.05;
+        word-spacing: 80px;
+        line-height: 2.5;
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .section-bg {
+        position: relative;
+      }
+
+      main {
+        position: relative;
+        z-index: 1;
+      }
+
+      main::before {
+        content: "🔧 ⚙ 💻 📐 🔬 ⚙ 🎓 ⚙ 🔧 📊 ⚙ 💡 🏆 ⚙ 🔧 📚 ⚙ 🎯 💻 ⚙ 🔧 ⚙ 📐 🔬 ⚙ 🎓 ⚙ 🔧 📊 ⚙ 💡 🏆 ⚙ 🔧 📚 ⚙ 🎯 💻 ⚙ 🔧 ⚙ 📐 🔬 ⚙ 🎓 ⚙";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 70px;
+        opacity: 0.05;
+        z-index: 0;
+        word-spacing: 100px;
+        line-height: 3;
+        overflow: hidden;
+        pointer-events: none;
+        transform: rotate(-5deg);
+      }
+
+      .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      nav::after {
+        content: "⚙";
+        position: fixed;
+        top: 8%;
+        left: 2%;
+        font-size: 90px;
+        opacity: 0.06;
+        z-index: 0;
+        transform: rotate(-30deg);
+      }
+
+      footer::after {
+        content: "⚙ 🔧 ⚙";
+        position: absolute;
+        bottom: 20%;
+        right: 5%;
+        font-size: 80px;
+        opacity: 0.08;
+        z-index: 0;
+        word-spacing: 30px;
+        transform: rotate(20deg);
+      }
     </style>
   </head>
   <body>
@@ -372,7 +465,7 @@
                 alt="Diverse youth playing sports and studying"
                 class="mission-vision-img shadow-sm mb-4"
               />
-              <h3 class="h4 text-brand-primary fw-bold mb-3">🌟 Vision</h3>
+              <h3 class="h4 text-brand-primary fw-bold mb-3">Vision</h3>
               <p class="mb-0">
                 To create a community where every young person, regardless of
                 their background, has the opportunity to realize their full
@@ -398,7 +491,7 @@
               />
               <div class="card-body">
                 <h3 class="h5 card-title text-brand-primary fw-bold mb-3">
-                  💪 Empowerment
+                  Empowerment
                 </h3>
                 <p class="card-text mb-0">
                   Building confidence, capability, and independence in every
@@ -416,7 +509,7 @@
               />
               <div class="card-body">
                 <h3 class="h5 card-title text-brand-primary fw-bold mb-3">
-                  💡 Innovation
+                  Innovation
                 </h3>
                 <p class="card-text mb-0">
                   Encouraging curiosity and creative thinking through technology
@@ -434,7 +527,7 @@
               />
               <div class="card-body">
                 <h3 class="h5 card-title text-brand-primary fw-bold mb-3">
-                  🤝 Integrity
+                  Integrity
                 </h3>
                 <p class="card-text mb-0">
                   Doing the right thing with honesty, transparency, and respect.
@@ -451,7 +544,7 @@
               />
               <div class="card-body">
                 <h3 class="h5 card-title text-brand-primary fw-bold mb-3">
-                  🌍 Inclusivity
+                  Inclusivity
                 </h3>
                 <p class="card-text mb-0">
                   Creating welcoming programs for all young people, regardless
@@ -469,7 +562,7 @@
               />
               <div class="card-body">
                 <h3 class="h5 card-title text-brand-primary fw-bold mb-3">
-                  ⭐ Excellence
+                  Excellence
                 </h3>
                 <p class="card-text mb-0">
                   Striving for high-quality delivery and meaningful outcomes.
@@ -523,7 +616,7 @@
         <div class="text-center small opacity-75">
           <p class="mb-0">
             © 2026 It Takes a Village Foundation. Making a difference, one child
-            at a time. ❤️
+            at a time.
           </p>
         </div>
       </div>
